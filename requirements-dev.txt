@@ -1,0 +1,2 @@
+# Optional: needed only by scripts/build-icon.sh, not by the app or Swift build.
+Pillow==12.3.0

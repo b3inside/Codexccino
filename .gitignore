@@ -1,0 +1,41 @@
+# SwiftPM caches and generated bundles / release archives
+/.build/
+/.swiftpm/
+/dist/
+*.dSYM/
+
+# Local design explorations, screenshots and machine-specific verification logs
+/design/
+/design-qa.md
+
+# Keep only the editable icon source and its prompt; historical assets stay local
+/Assets/*
+!/Assets/AppIcon-master.png
+!/Assets/AppIcon-prompt.txt
+
+# Local environment and tool configuration
+/.codex/
+/.agents/
+/.aws/
+/.baoyu-skills/
+/.local/
+/.env
+/.env.*
+!/.env.example
+/tmp/
+
+# Local account data must never be checked in
+reset-history.json
+reset-history.json.*
+auth.json
+
+# macOS and editor temporary files
+.DS_Store
+._*
+*.swp
+*.swo
+*~
+
+# Python helper caches
+__pycache__/
+*.py[cod]
