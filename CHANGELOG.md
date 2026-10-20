@@ -1,6 +1,13 @@
 # Changelog
 
-记录已完成的本地版本变更，日期使用 Asia/Shanghai。当前确认版本为 **1.2.8**；验证详情见 [docs/VERIFICATION.md](docs/VERIFICATION.md)。
+记录已完成的本地版本变更，日期使用 Asia/Shanghai。当前确认版本为 **1.2.9**；验证详情见 [docs/VERIFICATION.md](docs/VERIFICATION.md)。
+
+## 1.2.9 — 2026-10-20
+
+- 应用正式更名为 **Codpresso**，名字来自 Codex + espresso（意式浓缩咖啡）。同步更新卡片标题、退出菜单、应用显示名称、应用包和安装包名称。
+- GitHub 仓库更名为 Codpresso，更新 README、开发说明、演示截图与 Release。
+- 保持原应用标识及本地重置记录目录，支持原实例重开与既有记录兼容；咖啡素材和额度逻辑不变。
+- 版本更新为 1.2.9 / build 15；26 项测试、原生启动 / 菜单栏 / 取消流程及安装包隐私检查通过；ZIP 为 831,070 字节，未执行真实续杯。
 
 ## 1.2.8 — 2026-10-20
 

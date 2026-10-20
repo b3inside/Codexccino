@@ -9,7 +9,7 @@ binary_dir="$(swift build -c release --scratch-path .build --cache-path .build/c
 mkdir -p "$project_dir/dist"
 build_root="$(mktemp -d "$project_dir/dist/.codex-build.XXXXXX")"
 trap 'rm -rf "$build_root"' EXIT
-app_dir="$build_root/Codex用量.app"
+app_dir="$build_root/Codpresso.app"
 mkdir -p "$app_dir/Contents/MacOS" "$app_dir/Contents/Resources"
 cp "$binary_dir/CodexMenuBar" "$app_dir/Contents/MacOS/CodexMenuBar"
 # Keep the unstripped original in .build for diagnostics; strip only the copy
@@ -23,7 +23,7 @@ codesign --force --sign - "$app_dir"
 codesign --verify --deep --strict "$app_dir"
 # Never truncate an executable that a running process may still have mapped.
 # Install a complete, verified bundle by renaming; restore the old bundle on failure.
-python3 - "$app_dir" "$project_dir/dist/Codex用量.app" "$build_root/previous.app" <<'PY'
+python3 - "$app_dir" "$project_dir/dist/Codpresso.app" "$build_root/previous.app" <<'PY'
 from pathlib import Path
 import sys
 staged, target, previous = map(Path, sys.argv[1:])
@@ -36,4 +36,4 @@ except BaseException:
         previous.rename(target)
     raise
 PY
-printf '已编译并签名：%s\n' "$project_dir/dist/Codex用量.app"
+printf '已编译并签名：%s\n' "$project_dir/dist/Codpresso.app"

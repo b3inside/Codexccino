@@ -46,7 +46,7 @@ enum PreviewSupport {
                     print("离线预览已保存：\(directory.path)")
                     app.terminate(nil)
                 } else {
-                    _ = show(try await makeModel(value), title: "Codex 用量 · 离线预览")
+                    _ = show(try await makeModel(value), title: "\(AppIdentity.name) · 离线预览")
                     app.activate(ignoringOtherApps: true)
                 }
             } catch {
@@ -79,7 +79,7 @@ enum PreviewSupport {
         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
         var results: [[String: Any]] = []
         let status = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        status.button?.title = "Codexccino 测试"
+        status.button?.title = "Codpresso 测试"
         defer { NSStatusBar.system.removeStatusItem(status) }
         for scenario in ["cancel-button", "return-default", "abort", "retry-cancel"] {
             let snapshot = try JSONDecoder().decode(UsageSnapshot.self, from: Data("""
@@ -173,7 +173,7 @@ enum PreviewSupport {
         let model = try await makeModel("62")
         let status = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         guard let button = status.button else { throw PreviewError.assertion("Missing status button") }
-        button.title = "Codexccino 切换测试"
+        button.title = "Codpresso 切换测试"
         button.sendAction(on: .leftMouseDown)
         let target = ToggleTarget(model: model, button: button)
         button.target = target

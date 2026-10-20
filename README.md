@@ -1,10 +1,10 @@
-# Codexccino
+# Codpresso
 
-一个原生 macOS 菜单栏小工具，用一杯咖啡显示 Codex 剩余额度。名字来自 Codex + cappuccino。
+一个原生 macOS 菜单栏小工具，用一杯咖啡显示 Codex 剩余额度。名字来自 Codex + espresso（意式浓缩咖啡）。
 
-当前版本 **1.2.8 / build 14**，应用约 **1.18 MB**，ZIP 约 **831 KB**。[版本记录](CHANGELOG.md)
+当前版本 **1.2.9 / build 15**，应用约 **1.18 MB**，ZIP 约 **831 KB**。[版本记录](CHANGELOG.md)
 
-![Codexccino 深色卡片](docs/images/preview.jpg)
+![Codpresso 深色卡片](docs/images/preview.jpg)
 
 *截图使用离线演示数据，百分比和续杯次数不代表真实账户。*
 
@@ -37,7 +37,7 @@ bash scripts/build.sh
 bash scripts/launch.sh
 ```
 
-生成的应用位于 `dist/Codex用量.app`，可拖到“应用程序”目录。升级时先退出旧版，再替换应用包并重新打开。需要开机启动时，可在 macOS“系统设置 → 通用 → 登录项”添加应用。
+生成的应用位于 `dist/Codpresso.app`，可拖到“应用程序”目录。从旧版升级时，先退出旧应用，再安装并打开 `Codpresso.app`；不要同时保留旧应用为启动项。需要开机启动时，可在 macOS“系统设置 → 通用 → 登录项”添加应用。
 
 构建采用本机 ad-hoc 签名，未做 Developer ID 公证。源码仓库不包含构建产物，`dist/` 中的安装包应作为 Release 附件单独分发。
 
@@ -53,6 +53,8 @@ CLI 从 `~/.local/bin/codex`、Codex standalone 安装目录、Homebrew 常用�
 ~/Library/Application Support/CodexQuota/reset-history.json
 ```
 
+改名沿用原有应用标识与上述记录目录，已有操作记录无需迁移。
+
 记录包含账户标识、操作 UUID、时间和结果，不包含登录凭据。目录权限为 `0700`，文件权限为 `0600`。记录损坏或无法持久化时禁用重置；账户核验失败时也不会提交。
 
 实际是否符合重置条件由 Codex 服务决定。接口未提供账户标识的旧版 CLI 仍可查看用量，但无法续杯。
@@ -60,7 +62,7 @@ CLI 从 `~/.local/bin/codex`、Codex standalone 安装目录、Homebrew 常用�
 ## 开发与验证
 
 - [开发命令与界面检查](docs/DEVELOPMENT.md)
-- [1.2.8 验证结果与边界](docs/VERIFICATION.md)
+- [1.2.9 验证结果与边界](docs/VERIFICATION.md)
 - [素材来源、压缩与重建](docs/ASSETS.md)
 - [提交范围与本地文件说明](docs/REPOSITORY.md)
 - [隐私与公开前检查](docs/PRIVACY.md)

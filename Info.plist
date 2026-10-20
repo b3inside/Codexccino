@@ -3,12 +3,12 @@
 <plist version="1.0"><dict>
     <key>CFBundleExecutable</key><string>CodexMenuBar</string>
     <key>CFBundleIdentifier</key><string>app.codexccino.menubar</string>
-    <key>CFBundleName</key><string>Codex用量</string>
-    <key>CFBundleDisplayName</key><string>Codex用量</string>
+    <key>CFBundleName</key><string>Codpresso</string>
+    <key>CFBundleDisplayName</key><string>Codpresso</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleIconFile</key><string>AppIcon</string>
-    <key>CFBundleShortVersionString</key><string>1.2.8</string>
-    <key>CFBundleVersion</key><string>14</string>
+    <key>CFBundleShortVersionString</key><string>1.2.9</string>
+    <key>CFBundleVersion</key><string>15</string>
     <key>LSMinimumSystemVersion</key><string>13.0</string>
     <key>LSUIElement</key><true/>
     <key>NSHighResolutionCapable</key><true/>

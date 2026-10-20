@@ -137,7 +137,7 @@ struct QuotaView: View {
                         }
                     }
                     Divider()
-                    Button("退出 Codex 用量") { NSApp.terminate(nil) }.keyboardShortcut("q")
+                    Button("退出 \(AppIdentity.name)") { NSApp.terminate(nil) }.keyboardShortcut("q")
                 } label: {
                     Image(systemName: "ellipsis").font(.system(size: 17)).frame(width: 24, height: 28)
                 }

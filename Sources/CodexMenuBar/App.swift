@@ -44,7 +44,7 @@ struct CodexMenuBarApp {
                     _ = try await NSWorkspace.shared.openApplication(at: url, configuration: configuration)
                     exit(0)
                 } catch {
-                    FileHandle.standardError.write(Data("无法唤起已运行的 Codexccino：\(error.localizedDescription)\n".utf8))
+                    FileHandle.standardError.write(Data("无法唤起已运行的 Codpresso：\(error.localizedDescription)\n".utf8))
                     exit(1)
                 }
             }

@@ -1,6 +1,6 @@
 # 开发与检查
 
-所有命令在项目根目录执行。应用当前版本为 1.2.8 / build 14。
+所有命令在项目根目录执行。应用当前版本为 1.2.9 / build 15。
 
 ## 构建
 
@@ -11,14 +11,14 @@ bash scripts/launch.sh
 ```
 
 - `test.sh` 在需要时补充 Command Line Tools 中的 Swift Testing 插件路径。
-- `build.sh` 构建 Release，暂存完整应用包，剥离包内程序的调试 / 本地符号，再进行 ad-hoc 签名和严格检查，最后替换 `dist/Codex用量.app`。
+- `build.sh` 构建 Release，暂存完整应用包，剥离包内程序的调试 / 本地符号，再进行 ad-hoc 签名和严格检查，最后替换 `dist/Codpresso.app`。
 - 未剥离的程序留在 `.build/`。构建失败不会先覆盖已有应用包。
 - `launch.sh` 使用 Launch Services，程序不依赖终端会话；已有实例运行时会唤起该实例。
 
 ## 只读连接检查
 
 ```sh
-"dist/Codex用量.app/Contents/MacOS/CodexMenuBar" --check
+"dist/Codpresso.app/Contents/MacOS/CodexMenuBar" --check
 ```
 
 这个命令会连接本机 Codex CLI、读取真实用量并退出，不执行重置。输出含真实用量，不应作为仓库素材提交。
@@ -26,10 +26,10 @@ bash scripts/launch.sh
 ## 离线界面与交互
 
 ```sh
-"dist/Codex用量.app/Contents/MacOS/CodexMenuBar" --preview 62
-"dist/Codex用量.app/Contents/MacOS/CodexMenuBar" --render-previews "$PWD/.build/qa/previews"
-"dist/Codex用量.app/Contents/MacOS/CodexMenuBar" --verify-cancel "$PWD/.build/qa/cancellation"
-"dist/Codex用量.app/Contents/MacOS/CodexMenuBar" --verify-toggle "$PWD/.build/qa/toggle"
+"dist/Codpresso.app/Contents/MacOS/CodexMenuBar" --preview 62
+"dist/Codpresso.app/Contents/MacOS/CodexMenuBar" --render-previews "$PWD/.build/qa/previews"
+"dist/Codpresso.app/Contents/MacOS/CodexMenuBar" --verify-cancel "$PWD/.build/qa/cancellation"
+"dist/Codpresso.app/Contents/MacOS/CodexMenuBar" --verify-toggle "$PWD/.build/qa/toggle"
 ```
 
 这些模式使用离线服务，不连接账户，也不读取真实重置记录。取消检查覆盖取消按钮、默认回车、中止关闭和待确认重试取消；要求消费请求为 0、次数和历史文件不变。
@@ -44,10 +44,10 @@ bash scripts/launch.sh
 
 ```sh
 swiftc -parse-as-library scripts/verify-launch.swift -o .build/verify-launch
-.build/verify-launch "$PWD/dist/Codex用量.app" "$PWD/.build/qa/launch"
+.build/verify-launch "$PWD/dist/Codpresso.app" "$PWD/.build/qa/launch"
 ```
 
-启动检查会正常退出已有 Codexccino 实例，再通过 Launch Services 启动待测包，验证：
+启动检查会正常退出已有 Codpresso 实例，再通过 Launch Services 启动待测包，验证：
 
 - 冷启动后菜单栏按钮就绪，卡片默认收起。
 - Finder 等效重开显示已有卡片。
